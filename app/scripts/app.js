@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ngE2e2App', [])
+angular.module('ngE2eApp', [])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
