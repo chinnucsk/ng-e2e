@@ -1,9 +1,15 @@
 <div class="hero-unit">
-  <h1>'Allo, 'Allo!</h1>
-  <p>You now have</p>
-  <ul>
-      <li ng-repeat="thing in awesomeThings">{{thing}}</li>
-  </ul>
-  <p>installed.</p>
-  <h3>Enjoy coding! - Yeoman</h3>
+    <h1>Hej</h1>
+    <p>Cool playlists</p>
+    <ul>
+        <li ng-repeat="playlist in playlists">
+        <a href="" ng-click="setPlaylist(playlist)">{{ playlist.name }}</a>
+        </li>
+    </ul>
+    <p>Cool songs</p>
+    <ul>
+        <li ng-repeat="song in songs">
+        {{ song.title }} - {{ song.artist }}
+        </li>
+    </ul>
 </div>
