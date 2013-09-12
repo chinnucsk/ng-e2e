@@ -316,7 +316,11 @@ module.exports = function (grunt) {
       unit: {
         configFile: 'karma.conf.js',
         singleRun: true
-      }
+      },
+      e2e: {
+        configFile: 'karma-e2e.conf.js',
+        singleRun: true
+      },
     },
     cdnify: {
       dist: {
@@ -359,12 +363,12 @@ module.exports = function (grunt) {
     ]);
   });
 
+  // TODO: Separate this into e2e / unit tests?
   grunt.registerTask('test', [
     'clean:server',
     'concurrent:test',
     'autoprefixer',
-    'connect:test',
-    'karma'
+    'karma:e2e'
   ]);
 
   grunt.registerTask('build', [
