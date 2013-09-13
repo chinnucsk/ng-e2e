@@ -345,6 +345,30 @@ module.exports = function (grunt) {
           ]
         }
       }
+    },
+    scriptlinker: {
+      test: {
+        options: {
+          startTag: '<!--SCRIPTS-->',
+          endTag: '<!--SCRIPTS END-->',
+          fileTmpl: '<script src="%s"></script>',
+          appRoot: 'app/'
+        },
+        files: {
+          'app/index.html': ['app/scripts/controllers/main.js']
+        }
+      },
+      notest: {
+        options: {
+          startTag: '<!--SCRIPTS-->',
+          endTag: '<!--SCRIPTS END-->',
+          fileTmpl: '<script src="%s"></script>',
+          appRoot: 'app/'
+        },
+        files: {
+          'app/index.html': []
+        }
+      }
     }
   });
 
@@ -368,7 +392,9 @@ module.exports = function (grunt) {
     'clean:server',
     'concurrent:test',
     'autoprefixer',
-    'karma:e2e'
+    'scriptlinker:test',
+    'karma:e2e',
+    'scriptlinker:notest'
   ]);
 
   grunt.registerTask('build', [
