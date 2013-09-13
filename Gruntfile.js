@@ -355,7 +355,7 @@ module.exports = function (grunt) {
           appRoot: 'app/'
         },
         files: {
-          'app/index.html': ['app/scripts/controllers/main.js']
+          'app/index.html': ['app/scripts/app-dev.js']
         }
       },
       notest: {
@@ -366,7 +366,7 @@ module.exports = function (grunt) {
           appRoot: 'app/'
         },
         files: {
-          'app/index.html': []
+          'app/index.html': ['app/scripts/app.js']
         }
       }
     }
